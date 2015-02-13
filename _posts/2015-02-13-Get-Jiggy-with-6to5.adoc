@@ -1,0 +1,25 @@
+= Get Jiggy with 6to5
+:hp-tags: 6to5, JavaScript, ECMAScript
+
+I recently went to get my hands dirty with https://6to5.org/[6to5]. So far, I like it a lot! I don't know wether it's writing ECMAScript 6 or because of the process.
+
+It's stupid simple to setup and get started with. I tend to use https://gulp.io[Gulp] to automate my process, which makes life so much easier. But you can use whatever method you'd like.
+
+[source,js]
+----
+var gulp = require('gulp');
+var to5 = require('gulp-6to5');
+
+gulp.task('to5', function() {
+	return gulp.src('src/**/*.js')
+        .pipe(to5)
+    	.pipe(dest('dist'));
+});
+----
+
+And then just run it like so:
+
+[source,bash]
+$ gulp to5
+
+Pretty awesome huh.
